@@ -14,7 +14,7 @@ def round_to_nearest(number, base=1):
 		return round(base * number / base, num_digits)
 	return base * round(number / base)
 
-def print_sin_cos_art(total_length = int(10*3.14), amp_scale = 10, offset = 1, precision = 5):
+def print_sin_cos_art(total_length = int(10*3.14), amp_scale = 10, offset = 1, precision = 5, mirrored = False):
         string_length_max = (1 + offset) * amp_scale
 
         #Set pi precision
@@ -49,10 +49,14 @@ def print_sin_cos_art(total_length = int(10*3.14), amp_scale = 10, offset = 1, p
                 for n in range(dots_length):
                         amplitude_string += "."
                         
-                print(amplitude_string + str(len(amplitude_string)))
+                #print(amplitude_string + str(len(amplitude_string)))
+                if not(mirrored):
+                        print(amplitude_string)
+                else:
+                        print(amplitude_string + str(len(amplitude_string)) + amplitude_string[::-1])
 
         
-print_sin_cos_art()
+print_sin_cos_art(mirrored = True)
 
 """
 #print(round_to_nearest(1374,25))
