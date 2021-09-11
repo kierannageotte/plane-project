@@ -44,11 +44,11 @@ def print_sin_cos_art(total_length = int(10*3.14), amp_scale = 10, offset = 1, p
                 for m in range(spaces_length):
                         amplitude_string += " "
                 #Dots length 2
-                dots_length = string_length_max - len(amplitude_string)
-                print(len(amplitude_string))
+                #Multiplying string_length_max by 2 is important
+                dots_length = string_length_max * 2 - len(amplitude_string)
                 for n in range(dots_length):
                         amplitude_string += "."
-                
+                        
                 print(amplitude_string + str(len(amplitude_string)))
 
         
